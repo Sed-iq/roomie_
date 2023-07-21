@@ -8,7 +8,7 @@ export default () => {
   if (localStorage.getItem("cart_data") == null)
     // console.log(localStorage.getItem("cart_data"));
     localStorage.setItem("cart_data", JSON.stringify([]));
-  const [load, setLoad] = useState(false); // simulate loadtime
+  const [load, setLoad] = useState(true); // simulate loadtime
   return load == true ? (
     <Loading setLoad={setLoad} />
   ) : (
