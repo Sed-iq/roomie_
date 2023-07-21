@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/roomie.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roomie!</title>
+  </head>
+  <body>
+    <noscript> You need javascript to run this website </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script src="./src/components/paystack.js"></script>
+    <script>
+      function PAY(email, amount) {
+        var done;
+        var handler = PaystackPop.setup({
+          key: "pk_test_59dcc54b8a0254dca5c74661426d6204cbcedc15",
+          email: email,
+          amount: amount * 100 * 7.3, // Dollar rate of 730 naira,
+          currency: "NGN",
+          ref: "" + Math.floor(Math.random() * 1000000000 + 1),
+          onClose: function () {
+            alert("Window closed, payment not complete!");
+          },
+          callback: function (response) {
+            localStorage.clear();
+            location = "/";
+            // let message = "Payment complete! Reference: " + response.reference;
+          },
+        });
+        handler.openIframe();
+      }
+    </script>
+  </body>
+</html>

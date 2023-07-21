@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "path_regular";
+  src: url(Pathway_regular.ttf);
+}
+@font-face {
+  font-family: "path_semi";
+  src: url(Pathway_semi_bold.ttf);
+}
+@font-face {
+  font-family: "opensans-b";
+  src: url(OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: "opensans";
+  src: url(OpenSans-Regular.ttf);
+}
+body {
+  font-family: "opensans" !important;
+  width: 100%;
+  overflow-x: hidden;
+}
+.opensans {
+  font-family: "opensans";
+}
+.opensans-b {
+  font-family: "opensans-b";
+}
+
+.font-path {
+  font-family: "path_regular";
+}
+.font-path-b {
+  font-family: "path_semi";
+}
