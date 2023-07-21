@@ -1,6 +1,6 @@
 import { FaBroom, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-export default ({ cart, show }) => {
+export default ({ cart, show, setAbout }) => {
   return (
     <nav
       className={`${
@@ -12,13 +12,21 @@ export default ({ cart, show }) => {
           <FaBroom className="text-white text-sm sm:text-xl mx-2" />
           <h2 className="sm:text-sm text-xs opensans-b">Roomie</h2>
         </div>
-        <Link
-          to={"/cart"}
-          className="flex items-center hover:bg-black duration-100 justify-between rounded p-1 px-3"
-        >
-          <FaShoppingCart className="sm:text-base text-xs" />
-          <sup className="text-sm opensans-b px-2">{cart}</sup>
-        </Link>
+        <div className="flex">
+          <Link
+            to={"/cart"}
+            className="flex items-center hover:bg-black duration-100 justify-between rounded p-1 px-3"
+          >
+            <FaShoppingCart className="sm:text-base text-xs" />
+            <sup className="text-sm opensans-b px-2">{cart}</sup>
+          </Link>
+          <p
+            onClick={() => setAbout(true)}
+            className="sm:text-sm border-2 border-transparent p-2 hover:cursor-pointer hover:border-black"
+          >
+            About us
+          </p>
+        </div>
       </div>
     </nav>
   );

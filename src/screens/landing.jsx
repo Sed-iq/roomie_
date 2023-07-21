@@ -35,6 +35,7 @@ import Two_card from "../components/two_card";
 import Footer from "../components/footer";
 import { ToastContainer, toast } from "react-toastify";
 import { useState } from "react";
+import About from "./about";
 export default ({ show }) => {
   const notify = (message) =>
     toast.success(message, {
@@ -48,9 +49,11 @@ export default ({ show }) => {
     });
   const $cart = JSON.parse(localStorage.getItem("cart_data"));
   const [cart, setCart] = useState($cart.length);
+  const [about, setAbout] = useState(false);
   return (
     <div className="relative w-full  overflow-x-hidden">
-      <Nav cart={cart} show={show} />
+      {about == true ? <About setAbout={setAbout} /> : null}
+      <Nav cart={cart} show={show} setAbout={setAbout} />
       <div id="banner" className="flex justify-center items-center">
         <div className="text-white h-full w-full">
           <div className="flex opensans flex-col bg-black-a h-full w-full justify-center items-center">
